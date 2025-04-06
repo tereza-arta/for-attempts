@@ -9,7 +9,7 @@ jobs:
     steps:
       - name: Compare
         run: |
-          if [[ endsWith($(cat long.tx), $(cat short.tx)) ]]; then
+          if [[ endsWith("$(cat long.tx)", "$(cat short.tx))" ]]; then
             echo "Hello"
           else
             echo "No!"
