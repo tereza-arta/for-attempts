@@ -12,6 +12,7 @@ jobs:
       
       - name: With checkout
         run: |
+          echo hello > f.out
           ls -lah
     
 
