@@ -19,6 +19,8 @@ jobs:
         uses: actions/checkout@v4
       
       - name: With checkout
+        env:
+          GITHUB_TOKEN: "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"
         run: |
           echo hello > fn.out
           ls -lah
