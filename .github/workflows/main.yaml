@@ -10,7 +10,14 @@ jobs:
       - name: Checkout primary repo
         uses: actions/checkout@v4
       
-      - name: Compare
+      - name: With checkout
         run: |
-          diff long.tx short.tx
+          ls -lah
+    
+
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Without checkout
+        run: ls -lah
           
