@@ -23,7 +23,7 @@ jobs:
           echo hello > fn.out
           ls -lah
           git status
-          git add
+          git add .
           git commit -m "commit message"
           git push
     
