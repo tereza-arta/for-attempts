@@ -20,6 +20,9 @@ jobs:
     needs: dfdf
     runs-on: ubuntu-latest
     steps:
-      - name: Without checkout
+      - name: Checkout primary repo
+        uses: actions/checkout@v4
+        
+      - name: Again with checkout
         run: ls -lah
           
