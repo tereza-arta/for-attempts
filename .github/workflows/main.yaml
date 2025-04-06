@@ -8,6 +8,6 @@ jobs:
 
     steps:
       - name: Compare
-        if: endsWith($(cat long.tx), $(cat short.tx))
+        if: endsWith('$(cat long.tx)', '$(cat short.tx)')
         run: echo hello
           
