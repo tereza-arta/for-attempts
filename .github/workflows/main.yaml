@@ -16,6 +16,7 @@ jobs:
     
 
   job2:
+    needs: dfdf
     runs-on: ubuntu-latest
     steps:
       - name: Without checkout
