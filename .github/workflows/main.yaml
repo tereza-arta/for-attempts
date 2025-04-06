@@ -1,0 +1,17 @@
+name: fdfd
+
+on: push
+
+jobs:
+  dfdf:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Compare
+        run: |
+          if [[ endsWith($(cat long.tx), $(cat short.tx)) ]]; then
+            echo "Hello"
+          else
+            echo "No!"
+          fi  
+          
