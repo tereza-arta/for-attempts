@@ -12,9 +12,5 @@ jobs:
       
       - name: Compare
         run: |
-          if [[ endsWith('$(cat long.tx)', '$(cat short.tx))' ]]; then
-            echo "Hello"
-          else
-            echo "No!"
-          fi    
+          diff long.tx short.tx
           
