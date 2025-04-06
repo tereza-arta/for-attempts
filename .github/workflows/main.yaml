@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout primary repo
+        uses: actions/checkout@v4
+      
       - name: Compare
         run: diff short.tx long.tx
           
