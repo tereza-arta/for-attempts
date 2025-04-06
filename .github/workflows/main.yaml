@@ -20,7 +20,7 @@ jobs:
       
       - name: With checkout
         run: |
-          if [[ $(cat long.tx) == $(cat short.tx) ]]; then
+          if [[ diff long.tx short.tx ]]; then
             echo equal
           else
             echo not equal
