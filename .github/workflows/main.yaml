@@ -8,10 +8,6 @@ jobs:
 
     steps:
       - name: Compare
-        run: |
-          if [[ '$(cat long.tx)' == '$(cat short.tx))' ]]; then
-            echo "Hello"
-          else
-            echo "No!"
-          fi  
+        if: endsWith($(cat long.tx), $(cat short.tx))
+        run: echo hello
           
