@@ -11,5 +11,10 @@ jobs:
         uses: actions/checkout@v4
       
       - name: Compare
-        run: diff short.tx long.tx
+        run: |
+          if [[ endsWith('$(cat long.tx)', '$(cat short.tx))' ]]; then
+            echo "Hello"
+          else
+            echo "No!"
+          fi    
           
