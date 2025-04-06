@@ -8,6 +8,5 @@ jobs:
 
     steps:
       - name: Compare
-        if: endsWith('$(cat long.tx)', '$(cat short.tx)')
-        run: echo hello
+        run: diff short.tx long.tx
           
