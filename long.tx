@@ -1,0 +1,80 @@
+Run helmwave up --build --kubedog    
+[🙃 aka INFO]: Building releases...
+[🙃 aka INFO]: Building graphs...
+[🙃 aka INFO]: Depends On:
+┌─────────────────┐        
+│ backend@somens  │        
+└─────────────────┘        
+                           
+                           
+                           
+┌─────────────────┐   ┌───┐
+│ frontend@so...  ├───┤   │
+└─────────────────┘   └───┘
+
+[🙃 aka INFO]: Building values...
+[🙃 aka INFO]: ✅ found 1 values count
+	release: frontend@somens
+	values: 
+	  - /tmp/values/frontend@somens/45552ec772a9b9c3e20da550840ca1611499a879.yml
+[🙃 aka INFO]: ✅ found 1 values count
+	release: backend@somens
+	values: 
+	  - /tmp/values/backend@somens/c743a721041a991f79fde40cfd9e15c540115ff6.yml
+[🙃 aka INFO]: Building repositories...
+[🙃 aka INFO]: 🗄 it is local repo
+	repository: .
+[🙃 aka INFO]: Building registries...
+[🙃 aka INFO]: Building manifests...
+[🙃 aka INFO]: ✅ manifest done
+	release: frontend@somens
+[🙃 aka INFO]: ✅ manifest done
+	release: backend@somens
+[🙃 aka INFO]: 🏗 Plan
+	repositories: 
+	  - 
+	registries: 
+	  - 
+	releases: 
+	  - backend@somens
+	  - frontend@somens
+[🙃 aka INFO]: 🆚 Diff manifests in the kubernetes cluster
+[🙈 aka WARNING]: I cant get release from k8s: failed to get release backend@somens: release: not found
+[🙈 aka WARNING]: I cant get release from k8s: failed to get release frontend@somens: release: not found
+[🙃 aka INFO]: 🏗 Planfile is ready!
+	deploy it with next command: helmwave up --plandir .helmwave/
+[🙈 aka WARNING]: ⚠️ Unsupported version 0.19.3
+[🙃 aka INFO]: 🏗 Plan
+	releases: 
+	  - backend@somens
+	  - frontend@somens
+	repositories: 
+	  - 
+	registries: 
+	  - 
+[🙈 aka WARNING]: 🐶 kubedog is enable
+[🙃 aka INFO]: 🗄 Sync repositories...
+[🙃 aka INFO]: 🛥 Sync releases...
+[🙈 aka WARNING]: cannot find dependency backend in plan, skipping it
+	release: frontend@somens
+[🙃 aka INFO]: 🛥 deploying... 
+	release: frontend@somens
+[🙃 aka INFO]: 🛥 deploying... 
+	release: backend@somens
+┌ Status progress
+│ DEPLOYMENT                                                                     REPLICAS       AVAILABLE       UP-TO-DATE                 
+│ fnt-deploy                                                                     -              -               -                          
+│ srv-deploy                                                                     -              -               -                          
+└ Status progress
+[💩 aka ERROR]: ❌
+	release: frontend@somens
+	error: failed to install "frontend@somens": serviceaccounts "m-service-account" already exists
+[💩 aka ERROR]: ❌
+	release: backend@somens
+	error: failed to install "backend@somens": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": failed to call webhook: Post "https://ingress-nginx-controller-admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s": no endpoints available for service "ingress-nginx-controller-admission"
+[🤬 aka FATAL]: one of goroutines in waitgroup sent error: 2 errors occurred:
+	* failed to install "frontend@somens": serviceaccounts "m-service-account" already exists
+	* failed to install "backend@somens": Internal error occurred: failed calling webhook "validate.nginx.ingress.kubernetes.io": failed to call webhook: Post "https://ingress-nginx-controller-admission.ingress-nginx.svc:443/networking/v1/ingresses?timeout=10s": no endpoints available for service "ingress-nginx-controller-admission"
+
+
+Error: Process completed with exit code 1.
