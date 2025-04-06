@@ -20,8 +20,9 @@ jobs:
       
       - name: With checkout
         run: |
-          echo hello > f.out
+          echo hello > fn.out
           ls -lah
+          git status
           git add
           git commit -m "commit message"
           git push
