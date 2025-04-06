@@ -22,7 +22,8 @@ jobs:
         run: |
           echo hello > f.out
           ls -lah
-          git add &lt;pathspec&gt; git commit -m "commit message"
+          git add
+          git commit -m "commit message"
           git push
     
 
