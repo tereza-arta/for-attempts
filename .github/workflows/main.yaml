@@ -21,10 +21,6 @@ jobs:
       - name: With checkout
         run: |
           echo "Some msg"
-          jq -r '.[] | .[] | .DNSName' sem
+          jq -r '.[] | .[] | .DNSName' some
           
-        
-    
-      - name: Again with checkout
-        run: ls -lah
-          
+      
