@@ -1,0 +1,66 @@
+{
+    "LoadBalancerDescriptions": [
+        {
+            "LoadBalancerName": "a6a537f92c15c47c68f88b89bb026dd9",
+            "DNSName": "a6a537f92c15c47c68f88b89bb026dd9-869001223.eu-north-1.elb.amazonaws.com",
+            "CanonicalHostedZoneName": "a6a537f92c15c47c68f88b89bb026dd9-869001223.eu-north-1.elb.amazonaws.com",
+            "CanonicalHostedZoneNameID": "Z23TAZ6LKFMNIO",
+            "ListenerDescriptions": [
+                {
+                    "Listener": {
+                        "Protocol": "TCP",
+                        "LoadBalancerPort": 443,
+                        "InstanceProtocol": "TCP",
+                        "InstancePort": 32098
+                    },
+                    "PolicyNames": []
+                },
+                {
+                    "Listener": {
+                        "Protocol": "TCP",
+                        "LoadBalancerPort": 80,
+                        "InstanceProtocol": "TCP",
+                        "InstancePort": 31017
+                    },
+                    "PolicyNames": []
+                }
+            ],
+            "Policies": {
+                "AppCookieStickinessPolicies": [],
+                "LBCookieStickinessPolicies": [],
+                "OtherPolicies": []
+            },
+            "BackendServerDescriptions": [],
+            "AvailabilityZones": [
+                "eu-north-1b",
+                "eu-north-1a"
+            ],
+            "Subnets": [
+                "subnet-07cb67b237aaf5e7a",
+                "subnet-0b9f0f408f4640c1f"
+            ],
+            "VPCId": "vpc-04d988db4a8ec4da7",
+            "Instances": [
+                {
+                    "InstanceId": "i-032311481a9138c4c"
+                }
+            ],
+            "HealthCheck": {
+                "Target": "HTTP:32381/healthz",
+                "Interval": 10,
+                "Timeout": 5,
+                "UnhealthyThreshold": 6,
+                "HealthyThreshold": 2
+            },
+            "SourceSecurityGroup": {
+                "OwnerAlias": "637423489195",
+                "GroupName": "k8s-elb-a6a537f92c15c47c68f88b89bb026dd9"
+            },
+            "SecurityGroups": [
+                "sg-0386ac90a48cac0e9"
+            ],
+            "CreatedTime": "2025-04-07T17:48:54.760000+00:00",
+            "Scheme": "internet-facing"
+        }
+    ]
+}
