@@ -20,20 +20,11 @@ jobs:
       
       - name: With checkout
         run: |
-          if [[ !diff long.tx short.tx ]]; then
-            echo equal
-          else
-            echo not equal
-          fi  
-    
-
-  job2:
-    needs: dfdf
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout primary repo
-        uses: actions/checkout@v4
+          echo "Some msg"
+          jq -r '.[] | .[] | .DNSName' sem
+          
         
+    
       - name: Again with checkout
         run: ls -lah
           
