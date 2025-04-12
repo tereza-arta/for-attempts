@@ -20,6 +20,8 @@ jobs:
       
       - name: With checkout
         run: |
-          yq eval .deploy.image.tag val.yaml
+          if [[ $(yq eval .deploy.image.tag val.yaml) != 1371355]]; then
+            echo "Equals"
+          fi  
           
       
