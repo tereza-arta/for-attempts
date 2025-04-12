@@ -1,26 +1,24 @@
 name: fdfd
 
-on: push
+on:
+  workflow_dispatch:
+    inputs:
+      blam:
+        description: 'Environment to deploy to'
+        required: true
+        default: 'val.yaml'
 
 jobs:
   dfdf:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Git Setup  
-        shell: bash
-        run: |
-          echo "Git setup"
-          pwd
-          git config --global user.name 'Tereza'
-          git config --global user.email 'bisharyant@gmail.com'
-          
       - name: Checkout primary repo
         uses: actions/checkout@v4
       
       - name: With checkout
         run: |
-          if [[ $(yq eval .deploy.image.tag val.yaml) -ne 1371355 ]]; then
+          if [[ $(yq eval .deploy.image.tag ${{ github.event.inputs.blam }}) -ne 1371355 ]]; then
             echo "Equals"
           else
             echo "Ne"
