@@ -15,10 +15,14 @@ jobs:
     steps:
       - name: Checkout primary repo
         uses: actions/checkout@v4
+
+      - name: Set env
+        run: echo "SHORT_SHA=1371355" >> $GITHUB_ENV
       
       - name: With checkout
         run: |
-          if [[ $(yq eval .deploy.image.tag ${{ github.event.inputs.blam }}) -ne 1371355 ]]; then
+          echo ${{ env.SHORT_SHA }}
+          if [[ $(yq eval .deploy.image.tag ${{ github.event.inputs.blam }}) -ne ${{ env.SHORT_SHA }} ]]; then
             echo "Equals"
           else
             echo "Ne"
