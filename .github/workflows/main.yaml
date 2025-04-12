@@ -22,6 +22,8 @@ jobs:
         run: |
           if [[ $(yq eval .deploy.image.tag val.yaml) -ne 1371355 ]]; then
             echo "Equals"
+          else
+            echo "Ne"
           fi  
           
       
