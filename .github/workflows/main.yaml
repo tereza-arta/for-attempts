@@ -17,5 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set env
-        run: echo "Hello from action"
+        run: |
+          aws cloudformation describe-stacks
+          echo "Hello from action"
       
