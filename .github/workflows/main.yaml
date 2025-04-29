@@ -10,20 +10,16 @@ on:
 
 jobs:
   dfdf:
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
       - name: Checkout primary repo
         uses: actions/checkout@v4
 
       - name: Set env
-        run: echo "SHORT_SHA=1371355" >> $GITHUB_ENV
+        run: echo "Hello from action"
       
-      - name: With checkout
-        run: |
-          echo ${{ env.SHORT_SHA }}
-          if [[ $(yq eval .deploy.image.tag ${{ github.event.inputs.blam }}) -ne ${{ env.SHORT_SHA }} ]]; then
-            echo "Equals"
+      
           else
             echo "Ne"
           fi  
