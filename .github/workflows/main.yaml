@@ -1,20 +1,22 @@
-name: fdfd
+name: Apply terraform infrastructure
 
 on:
+  push:
+    branches:
+    - main
+    paths:
+    - fold
   workflow_dispatch:
-    inputs:
-      blam:
-        description: 'Environment to deploy to'
-        required: true
-        default: 'val.yaml'
 
 jobs:
-  dfdf:
-    runs-on: self-hosted
+  Terraform-job:
+    name: Tf-job-name
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout primary repo
+      - name: Checkout
         uses: actions/checkout@v4
+
 
       - name: Set env
         run: |
