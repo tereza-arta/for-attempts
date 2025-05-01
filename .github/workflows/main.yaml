@@ -5,7 +5,7 @@ on:
     branches:
     - main
     paths:
-    - fold
+    - 'fold/**'
   workflow_dispatch:
 
 jobs:
